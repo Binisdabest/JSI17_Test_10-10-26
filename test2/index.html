@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- NOTE: the app name is written exactly as you gave it (POKEEXPLOROR).
+         If you meant "POKEEXPLORER", change it here and in the <h1> below. -->
+    <title>POKEEXPLORER</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <!-- App header: decorative indicator lights + name -->
+        <header class="brand">
+            <div class="lights" aria-hidden="true">
+                <span class="light light-blue"></span>
+                <span class="light light-red"></span>
+                <span class="light light-yellow"></span>
+                <span class="light light-green"></span>
+            </div>
+            <h1>POKEEXPLOROR</h1>
+            <p class="tagline">Trainer Login</p>
+        </header>
+
+        <!-- The "screen" holds the whole login UI.
+             DO NOT change the ids below (email, password, signupBtn, loginBtn,
+             googleBtn, userInfo, userEmail, userUID, userProvider, logoutBtn):
+             app.js looks elements up by these ids. -->
+        <section class="screen">
+
+            <input type="email" id="email" placeholder="Email" autocomplete="email">
+            <input type="password" id="password" placeholder="Password (min. 6 characters)"
+                autocomplete="current-password">
+
+            <div class="button-row">
+                <button id="signupBtn">Sign Up</button>
+                <button id="loginBtn">Log In</button>
+            </div>
+
+            <hr>
+
+            <button id="googleBtn">Log In With Google</button>
+
+            <!-- Hidden by default (see style.css). app.js shows it after login. -->
+            <div id="userInfo">
+                <h3>Trainer Card</h3>
+
+                <p>Email: <span id="userEmail"></span></p>
+                <p>UID: <span id="userUID"></span></p>
+                <p>Provider: <span id="userProvider"></span></p>
+
+                <button id="logoutBtn">Log Out</button>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Firebase SDK (compat version, works with the firebase.* syntax) -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-auth-compat.js"></script>
+
+    <!-- ORDER MATTERS: firebase-config.js creates `auth`, app.js uses it.
+         (In your original, these two were loaded in the opposite order,
+         which caused "auth is not defined".) -->
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
