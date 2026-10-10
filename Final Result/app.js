@@ -1,8 +1,3 @@
-// ==============================
-// APP LOGIC: sign up, log in, Google login, auth state, log out
-// ==============================
-// NOTE: needs firebase-config.js loaded first (it creates `auth`).
-
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const userInfo = document.getElementById("userInfo");
